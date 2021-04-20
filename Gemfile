@@ -79,6 +79,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
  #JavaScriptの非同期処理
  gem 'jquery-rails'
 
+ #アイコンの使用
+ gem 'font-awesome-sass'
+
  #環境変数の管理
  gem 'dotenv-rails'
  group :production do
