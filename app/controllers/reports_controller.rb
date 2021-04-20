@@ -8,6 +8,7 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.find(params[:id])
+    @report_comment = ReportComment.new
   end
 
  def create
@@ -25,6 +26,9 @@ class ReportsController < ApplicationController
   end
 
   def destroy
+    @report = Report.find(params[:id])
+    @report.destroy
+    redirect_to report_path
   end
 
   private

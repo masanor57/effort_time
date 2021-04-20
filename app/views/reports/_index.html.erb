@@ -2,9 +2,22 @@
      <h2>Report</h2>
      <table class="table table-hover">
       <thead>
-      <th>Title
+      <th>学習時間
       </th>
-      <th>Opinion
+      <th>内容
       </th>
       </thead>
     <tbody>
+　　　<% reports.each do |report| %>
+      <tr>
+        <td><%= link_to user_path(report.user) do %>
+            <% end %>
+        </td>
+        <td><%= link_to report.title, report_path(report), class: "report_#{report.id}" %></td>
+        <td><%= report.body %></td>
+        <td><%= link_to "#{report.report_comments.count} コメント", report_path(report.id) %></td>
+        <td class="favorite-btn"><%= render "favorites/favorites", report: report %></td>
+      </tr>
+     <% end %>
+    </tbody>
+    </table>
