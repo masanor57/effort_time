@@ -3,8 +3,8 @@
 <h2>学習時間</h2>
 <p><%= @report.body %></p>
 <% if @report.user == current_user %>
-    <%= link_to "削除", report_path(@report), method: :delete %>
-  <% end %>
+<%= link_to "削除", report_path(@report), method: :delete %>
+<% end %>
 
 <div class="comments">
 <p>コメント件数：<%= @report.report_comments.count %></p>

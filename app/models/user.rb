@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :reports, dependent: :destroy
   has_many :report_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  
+  
 end
