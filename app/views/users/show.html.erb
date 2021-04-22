@@ -8,6 +8,14 @@
 	   <th>名前</th>
 	   <th><%= @user.name %></th>
      </tr>
+     <tr>
+    <th>follows</th>
+
+  </tr>
+  <tr>
+    <th>followers</th>
+
+  </tr>
      </table>
      <% if @user.id == current_user.id %>
     <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
