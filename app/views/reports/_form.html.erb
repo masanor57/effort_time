@@ -1,14 +1,21 @@
-<%= form_with model:report,local:true do |f| %>
-
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control report_title' %>
+<div class="contents">
+  <div class="input_time">
+  <%= form_with model: @report, url: reports_path do |f| %>
+    <h4>
+      日付を選択してください
+    </h4>
+    <%= f.date_select :date %>
+    <h4>
+      学習時間を入力してください
+    </h4>
+    <%= f.number_field :time, placeholder: "勉強時間" %>
+    <%= f.text_area :body, placeholder: "内容", size: "20x5" %>
+    <%= f.submit "送信",class: 'submit_btn' %>
+  <% end %>
   </div>
-  <div class="form-group">
-    <%= f.label :opinion %>
-    <%= f.text_area :body, class: 'form-control report_body' %>
+  <div class="output_time">
+    <div class="balloon">
+      <p>これまでトータルは <span class="study_time"> <%= @report_sum %> h </span> です！</p>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.submit class: 'btn btn-dark' %>
-  </div>
-<% end %>
+</div>

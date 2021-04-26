@@ -1,28 +1,37 @@
-<h1>学習時間詳細</h1>
-<p><%= @report.title %></p>
-<h2>学習時間</h2>
-<p><%= @report.body %></p>
-<% if @report.user == current_user %>
-<%= link_to "削除", report_path(@report), method: :delete %>
-<% end %>
+<div class="flexbox">
+　<div class="container">
+  　<div class="row">
+   　 <div class="maypage-main">
+      <h5 style="background-color: #e6e6e6; text-align: center;">学習時間</h5>
+      <div class="mypage-flex-group ">
+　　　<p>日付　<%= @report.date %></p>
+　　　<p>時間　<%= @report.time %></p>
+　　　<p>内容　<%= @report.body %></p>
+　　　<% if @report.user == current_user %>
+　　　<%= link_to "削除", report_path(@report), method: :delete %>
+　　　<%= link_to "学習時間編集", edit_report_path(@report) %>
+　　　<% end %>
 
-<div class="comments">
-<p>コメント件数：<%= @report.report_comments.count %></p>
-<% @report.report_comments.each do |report_comment| %>
-  <%= report_comment.user.name %>
-  <%= report_comment.created_at.strftime('%Y/%m/%d') %><%= report_comment.comment %>
-   <% if report_comment.user == current_user %>
-  <div class="comment-delete">
-    <%= link_to "削除", report_report_comment_path(report_comment.report, report_comment), method: :delete %>
-  </div>
-  <% end %>
-<% end %>
-</div>
+　　　<div class="comments">
+　　　<p>コメント件数：<%= @report.report_comments.count %></p>
+　　　　　<% @report.report_comments.each do |report_comment| %>
+  　　　　　　<%= report_comment.user.name %>
+  　　　　　　<%= report_comment.created_at.strftime('%Y/%m/%d') %><%= report_comment.comment %>
+  　　　　　　<% if report_comment.user == current_user %>
+  　　<div class="comment-delete">
+    　　　　<%= link_to "削除", report_report_comment_path(report_comment.report, report_comment), method: :delete %>
+  　　</div>
+  　　　　　　<% end %>
+　　　　　<% end %>
+　　　</div>
 
-</div>
+　</div>
 <div class="new-comment">
 <%= form_with(model:[@report, @report_comment], local: true) do |f| %>
   <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
   <%= f.submit "送信する" %>
 <% end %>
+</div>
+</div>
+</div>
 </div>

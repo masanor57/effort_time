@@ -13,8 +13,9 @@
         <td><%= link_to user_path(report.user) do %>
             <% end %>
         </td>
-        <td><%= link_to report.title, report_path(report), class: "report_#{report.id}" %></td>
-        <td><%= report.body %></td>
+        <td><%= report.date %></td>
+        <td><%= report.time %></td>
+        <td><%= link_to report.body, report_path(report), class: "report_#{report.id}"%></td>
         <td><%= link_to "#{report.report_comments.count} コメント", report_path(report.id) %></td>
         <td class="favorite-btn">いいね<%= render "favorites/favorites", report: report %></td>
       </tr>

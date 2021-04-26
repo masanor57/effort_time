@@ -10,9 +10,13 @@
 	   <th><%= @user.name %></th>
      </tr>
      <tr>
-    <th>follows</th>
-    <th><%= link_to @user.followings.count, user_followers_path(@user) %></th>
-    </tr>
+	   <th>時間</th>
+	   <th><%= @report %></th>
+     </tr>
+     <tr>
+     <th>follows</th>
+     <th><%= link_to @user.followings.count, user_followers_path(@user) %></th>
+     </tr>
   <tr>
     <th>followers</th>
     <th><%= link_to @user.followers.count, user_followings_path(@user) %></th>

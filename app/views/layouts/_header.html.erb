@@ -1,20 +1,20 @@
 <header>
-   <nav class="navbar navbar-expand-sm navbar-dark bg-dark mt-3 mb-3">
+   <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <%= link_to 'Effort time', root_path, class: "btn text-light" %>
+        <%= link_to 'Effort time', root_path, class: "fas fa-hourglass-half btn text-light" %>
          <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
         <% if user_signed_in? %>
               <%= render 'layouts/search' %>
-              <%= link_to 'About', home_about_path, class: "btn text-light" %>
-              <%= link_to 'マイページ', user_path(current_user), class: "btn text-light" %>
-              <%= link_to 'ユーザー一覧', users_path, class: "btn text-light" %>
-              <%= link_to '学習時間一覧', reports_path, class: "btn text-light" %>
+              <%= link_to 'About', home_about_path, class: "fas fa-book btn text-light" %>
+              <%= link_to 'マイページ', user_path(current_user), class: "fas fa-user-graduate btn text-light" %>
+              <%= link_to 'ユーザー一覧', users_path, class: "fas fa-user-alt btn text-light" %>
+              <%= link_to '学習時間一覧', reports_path, class: "fas fa-history btn text-light" %>
               <%= link_to ' logout', destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %>
         <% else %>
-              <%= link_to 'About', home_about_path, class: "btn text-light" %>
+              <%= link_to 'About', home_about_path, class: "fas fa-book btn text-light" %>
               <%= link_to ' Home',root_path,class: 'fas fa-home nav-link text-light' %>
               <%= link_to ' sign up', new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %>
               <%= link_to ' login', new_user_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%>

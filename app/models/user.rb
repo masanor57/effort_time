@@ -14,16 +14,18 @@ class User < ApplicationRecord
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :follower_relationships
 
-  def following?(other_user)
-    following_relationships.find_by(following_id: other_user)
+  def follow(user_id)
+    unless self == user_id
+    following_relationships.create(following_id: user_id)
+    end
   end
 
-  def follow!(other_user)
-    following_relationships.create!(following_id: other_user)
+  def unfollow(user_id)
+    following_relationships.find_by(following_id: user_id).destroy
   end
 
-  def unfollow!(other_user)
-    following_relationships.find_by(following_id: other_user).destroy
+  def following?(user)
+    followings.include?(user)
   end
 
   def self.search_for(content, method)
