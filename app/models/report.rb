@@ -12,13 +12,13 @@ class Report < ApplicationRecord
 
    def self.search_for(content, method)
     if method == 'perfect'
-      Report.where(title: content)
+      Report.where(body: content)
     elsif method == 'forward'
-      Report.where('title LIKE ?', content+'%')
+      Report.where('body LIKE ?', content+'%')
     elsif method == 'backward'
-      Report.where('title LIKE ?', '%'+content)
+      Report.where('body LIKE ?', '%'+content)
     else
-      Report.where('title LIKE ?', '%'+content+'%')
+      Report.where('body LIKE ?', '%'+content+'%')
     end
    end
 

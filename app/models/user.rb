@@ -15,8 +15,8 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships
 
   def follow(user_id)
-    unless self == user_id
-    following_relationships.create(following_id: user_id)
+    unless self.id == user_id.to_i
+      following_relationships.create(following_id: user_id)
     end
   end
 

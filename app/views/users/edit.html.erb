@@ -1,6 +1,6 @@
 <div class="container">
     <div class="justify-content-md-center">
-    <h1>プロフィール編集</h1>
+    <h2 style="background-color:#EEEEEE	; text-align: center;">プロフィール編集</h2>
       <%= form_with model:@user, local:true do |f| %>
      <div class="col-sm-8">
       <%= f.label :last_name, "名前" %><%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
