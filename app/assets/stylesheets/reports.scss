@@ -1,3 +1,24 @@
 // Place all the styles related to the reports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.submit_btn{
+    padding: 10px 10px;
+    background-color:#191970;
+    color: #fff;
+    border-style: none;
+  }
+
+
+
+.balloon {
+      position: relative;
+      display: inline-block;
+      margin: 1.5em 0;
+      padding: 20px 10px;
+      min-width: 120px;
+      max-width: 100%;
+      color:  #fff;
+      font-size: 16px;
+      background: #191970	;
+      border-radius: 10px;
+    }

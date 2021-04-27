@@ -6,10 +6,11 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-
-html, body {
+body {
   margin: 0;
   padding: 0;
+  background-image: image-url('book.jpg');
+  background-size:cover;
 }
 
 .container-bgimage {
@@ -19,5 +20,5 @@ html, body {
 
 .about {
   background-image: image-url('about.jpg');
-  background-size:cover;
+  background-size: cover;
 }
