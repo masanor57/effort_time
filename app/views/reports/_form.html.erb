@@ -4,11 +4,11 @@
     <h4>
       日付を選択してください
     </h4>
-    <%= f.date_select :date %>
+    <%= f.date_select :date, use_month_numbers: true, start_year: 2021, end_year: Time.now.year, prompt:"--" %>
     <h4>
       学習時間を入力してください
     </h4>
-    <%= f.number_field :time, placeholder: "勉強時間" %>
+    <p><%= f.number_field :time, min: 1, max: 24,  placeholder: "時間" %></p>
     <%= f.text_area :body, placeholder: "内容", size: "20x5" %>
     <%= f.submit "送信",class: 'submit_btn' %>
   <% end %>
