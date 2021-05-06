@@ -15,6 +15,8 @@ class ReportsController < ApplicationController
  def create
     @report = Report.new(report_params)
     @report.user_id = current_user.id
+    @report.score = Language.get_data(report_params[:body])
+
   if @report.save
       redirect_to reports_path(@report), notice: "You have created report successfully."
   else
