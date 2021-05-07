@@ -14,7 +14,7 @@
         　<td><font color="#33CCFF"><%= report.date %></font></td>
         　<td><font color="#33CCFF"><%= report.time %></font></td>
         　<td><%= link_to report.body, report_path(report), class: "report_#{report.id}"%></td>
-        　<td><span class="sentiment-score">本文の感情分析スコア<%= report.score %></span></td>
+        　<td><span class="sentiment-score">ポジティブスコア<%= report.score %></span></td>
         　<td><%= link_to "#{report.report_comments.count} コメント", report_path(report.id) %></td>
        　 <td class="favorite-btn">いいね<%= render "favorites/favorites", report: report %></td>
       　</tr>

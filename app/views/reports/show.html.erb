@@ -7,7 +7,7 @@
 　　　<p>日付　<%= @report.date %></p>
 　　　<p>時間　<%= @report.time %></p>
 　　　<p>内容　<%= @report.body %></p>
-　　　<p class="sentiment-score">本文の感情分析スコア[<%= @report.score %>]</p>
+　　　<p class="sentiment-score">ポジティブスコア[<%= @report.score %>]</p>
 　　　<% if @report.user == current_user %>
 　　　<%= link_to "削除", report_path(@report), method: :delete %>
 　　　<%= link_to "学習時間編集", edit_report_path(@report) %>
