@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="justify-content-md-center">
+    <div class="contens">
     <h2 style="background-color:#EEEEEE	; text-align: center;">プロフィール編集</h2>
       <%= form_with model:@user, local:true do |f| %>
      <div class="col-sm-8">
@@ -9,9 +9,8 @@
       <%= f.label :last_name, "Eメール" %><%= f.text_field :email, autofocus: true, id:"inputEmail", placeholder:"Email"%>
      </div><br>
      <div class="col-sm-4">
-
-     </div><br>
-     <%= f.submit "変更を保存" %>
+    </div><br>
+    <%= f.submit "変更を保存" %>
      <% end %>
     </div>
     </div>
