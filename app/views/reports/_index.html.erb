@@ -1,19 +1,24 @@
 <div class='col-md-8 offset-md-1'>
    <div class = "index">
-    <h2 style="background-color:#DDDDDD	; text-align: center;">Report</h2>
+    <h2 style="text-align: center;">Report</h2>
      <table class="table table-striped">
       <thead>
       　<tr>
             <th>日付</th>
-            <th>学習時間</th>
+
+            <th>時間</th>
+
             <th>内容</th>
+            <th>スコア</th>
+            <th>コメント</th>
+            <th>いいね</th>
       　</tr>
       </thead>
     　<tbody>
 　　　　<% reports.each do |report| %>
       　<tr>
-        　<td><font color="#33CCFF"><%= report.date %></font></td>
-        　<td><font color="#33CCFF"><%= report.time %></font></td>
+        　<td><%= report.date %></td>
+        　<td><%= report.time %></td>
         　<td><%= link_to report.body, report_path(report), class: "report_#{report.id}"%></td>
         　<td><span class="sentiment-score">ポジティブスコア<%= report.score %></span></td>
         　<td><%= link_to "#{report.report_comments.count} コメント", report_path(report.id) %></td>
