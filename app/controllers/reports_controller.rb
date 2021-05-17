@@ -5,6 +5,7 @@ class ReportsController < ApplicationController
     @reports = Report.all
     @report = Report.new
     @report_sum = @user.reports.sum(:time)
+    @reports = Report.page(params[:page]).per(10)
   end
 
   def show
