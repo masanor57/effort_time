@@ -1,6 +1,6 @@
 <div class="container">
     <div class="justify-content-md-center">
-    <h2 style="background-color:#DDDDDD	; text-align: center;">学習時間編集</h2>
+    <h2 style="text-align: center;">学習時間編集</h2>
      <%= form_with model:@report, local:true do |f| %>
      <div class="col-sm-8">
       <%= f.label :date, "日付" %><%= f.date_select :date, autofocus: true, id:"inputDate", placeholder:"日付"%>

@@ -1,7 +1,6 @@
+<div class= "search">
 <% if @model == 'user' %>
 	<h3>Users search for "<%= @content %>"</h3>
   <%= render 'users/index', users: @records %>
-<% elsif @model == 'report' %>
-	<h3>Reports search for "<%= @content %>"</h3>
-  <%= render 'reports/index', reports: @records %>
 <% end %>
+</div>
