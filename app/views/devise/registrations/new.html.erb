@@ -1,7 +1,7 @@
-<div class="container">
+<div class="setup">
   <div class="row">
-    <div class='mx-auto  col-md-8'>
-     <h2 style="background-color:#DDDDDD	; text-align: center;">新規登録</h2>
+    <div class='mx-auto'>
+     <h2 style="text-align: center;">新規登録</h2>
 
 　　　<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
   　　<%= render "devise/shared/error_messages", resource: resource %>
@@ -31,7 +31,7 @@
   　　</div>
 
   　　<div class="actions">
-    　　<%= f.submit "Sign up" %>
+    　　<%= f.submit "Sign up",class: 'btn btn-success btn-sm btn-block sign_up' %>
   　　</div>
 　　　<% end %>
 
