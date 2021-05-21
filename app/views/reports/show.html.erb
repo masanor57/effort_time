@@ -29,8 +29,8 @@
 　</div>
 <div class="new-comment">
 <%= form_with(model:[@report, @report_comment], local: true) do |f| %>
-  <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
-  <%= f.submit "送信する" %>
+  <%= f.text_area :comment, placeholder: "コメントをここに入れてください", size: "30x5" %>
+  <%= f.submit "送信する", class: 'submit_btn' %>
 <% end %>
 </div>
 </div>
