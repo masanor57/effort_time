@@ -1,5 +1,0 @@
-        <% if report.favorited_by?(current_user) %>
-        <%= link_to report.favorites.count, report_favorites_path(report), method: :delete, class: "fas fa-heart heart_blue" %>
-        <% else %>
-        <%= link_to report.favorites.count, report_favorites_path(report), method: :post, class: "fas fa-heart heart_red" %>
-        <% end %>

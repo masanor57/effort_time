@@ -1,0 +1,9 @@
+ <% if report.favorited_by?(current_user) %>
+  <%= link_to report_favorites_path(report), method: :delete, remote: true do %>
+   ♥<%= report.favorites.count %>いいね
+  <% end %>
+ <% else %>
+  <%= link_to report_favorites_path(report), method: :post, remote: true do %>
+   ♡<%= report.favorites.count %>いいね
+  <% end %>
+ <% end %>
