@@ -20,10 +20,10 @@
         　<td><%= link_to report.body, report_path(report), class: "report_#{report.id}"%></td>
         　<td><span class="sentiment-score">ポジティブスコア<%= report.score %></span></td>
         　<td><%= link_to "#{report.report_comments.count} コメント", report_path(report.id) %></td>
-       　 <td id="favorites_buttons"><%= render "favorites/favorite", report: report %></td>
+          <td id="favorites_buttons-<%= report.id %>"><%= render "favorites/favorite", report: report %></td>
       　</tr>
     　 <% end %>
-    　</tbody>
+       </tbody>
     </table>
     </div>
     <%= paginate @reports %>
