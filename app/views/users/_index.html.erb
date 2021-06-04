@@ -2,7 +2,7 @@
   <tbody>
     <% users.each do |user| %>
       <tr>
-        <td><%= attachment_image_tag @user, :profile_image_id, size: "30x30" , fallback: "no_image.jpg"%></td>
+        <td><%= attachment_image_tag user, :profile_image, size: "30x30" , fallback: "no_image.jpg"%></td>
         <td><%= user.name %></td>
         <td><%= link_to '詳細', user_path(user), class: "user_#{user.id}" %></td>
         <td><% if user.id != current_user.id %>
