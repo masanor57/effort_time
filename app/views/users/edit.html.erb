@@ -2,18 +2,22 @@
     <div class="contens">
     <h2 style="text-align: center;">プロフィール編集</h2>
       <%= form_with model:@user, local:true do |f| %>
-     <div class="col-sm-8">
-      <%= f.label :last_name, "名前" %><%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
+     <div class="filed">
+      <%= f.label :last_name, "名前" %><br>
+      <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
      </div><br>
-     <div class="col-sm-4">
-      <%= f.label :last_name, "Eメール" %><%= f.text_field :email, autofocus: true, id:"inputEmail", placeholder:"Email"%>
+     <div class="filed">
+      <%= f.label :last_name, "Eメール" %><br>
+      <%= f.text_field :email, autofocus: true, id:"inputEmail", placeholder:"Email"%>
      </div><br>
-     <div class="col-sm-4">
-    </div><br>
-    <h4>画像</h4>
-     <%= f.attachment_field :profile_image %>
-    <%= f.submit "変更を保存" %>
-     <% end %>
-    </div>
-    </div>
+     </form>
+     <div class="filed">
+       <h4>画像</h4>
+       <%= f.attachment_field :profile_image %><br>
+　　   <br>
+　　   <%= f.submit "変更を保存" %>
+       <% end %>
+     </div><br>
+   　 </div>
+   　 </div>
 </div>
