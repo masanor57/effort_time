@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   attachment :profile_image
 
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :profile_image_id, presence: true
+
   has_many :reports, dependent: :destroy
   has_many :report_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
