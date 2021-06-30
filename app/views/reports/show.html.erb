@@ -14,7 +14,7 @@
 　　　   <% end %>
 
 　　　 <div class="comments">
-　　　  <p>コメント件数：<%= @report.report_comments.count %></p>
+　　　  <p>コメント一覧：<%= @report.report_comments.count %>件</p>
 　　　　<% @report.report_comments.each do |report_comment| %>
 　　　　  <div>
   　　　　　　<%= report_comment.user.name %>
