@@ -9,7 +9,7 @@
       学習時間を入力してください
     </h4>
     <p><%= f.number_field :time, min: 1, max: 24,  placeholder: "時間" %></p>
-    <%= f.text_area :body, placeholder: "内容", size: "20x5" %>
+    <%= f.text_area :body, placeholder: "内容", size: "31x5" %>
     <%= f.submit "送信",class: 'submit_btn' %>
   <% end %>
   </div>
@@ -18,4 +18,4 @@
       <p>学習時間の合計は <span class="study_time"> <%= @report_sum %> h </span> です！</p>
     </div>
   </div>
-</div>
+</div>s
