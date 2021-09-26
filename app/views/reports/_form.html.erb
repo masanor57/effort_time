@@ -10,7 +10,7 @@
       学習時間を入力してください
     </h4>
     <p><%= f.number_field :time, min: 1, max: 24,  placeholder: "時間" %></p>
-    <%= f.text_area :body, placeholder: "内容", size: "31x3" %>
+    <%= f.text_area :body, placeholder: "内容", size: "31x2" %>
     <%= f.submit "送信",class: 'submit_btn' %>
   <% end %>
   </div>
