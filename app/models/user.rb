@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
-  validates :profile_image_id, presence: true
+
 
   has_many :reports, dependent: :destroy
   has_many :report_comments, dependent: :destroy
